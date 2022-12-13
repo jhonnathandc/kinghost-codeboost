@@ -1,0 +1,91 @@
+$font-t: "PT Sans", sans-serif;
+$font-p: "Lato", sans-serif;
+
+@mixin type-1($size, $device: desktop) {
+  font-family: $font-t;
+
+  // H1
+  @if $size == h1 and $device == desktop {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+  } @else if $size == h1 and $device == mobile {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  // H2
+  @if $size == h2 and $device == desktop {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 700;
+  } @else if $size == h2 and $device == mobile {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  // H3
+  @if $size == h3 and $device == desktop {
+    font-family: $font-p;
+    font-size: 1.125rem;
+    line-height: 1.22;
+    font-weight: 900;
+  } @else if $size == h3 and $device == mobile {
+    font-family: $font-p;
+    font-size: 1rem;
+    line-height: 1.18;
+    font-weight: 900;
+  }
+}
+
+@mixin type-2($size, $device: desktop) {
+  font-family: $font-p;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  // P1
+  @if $size == p1 and $device == desktop {
+    font-weight: 700;
+  } @else if $size == p1 and $device == mobile {
+    font-weight: 500;
+  }
+
+  // P2
+  @if $size == p2 {
+    font-weight: 500;
+  }
+
+  // P3
+  @if $size == p3 and $device == desktop {
+    font-weight: 400;
+  } @else if $size == 400 and $device == mobile {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
+
+h1 {
+  color: $white;
+  @include type-1(h1, desktop);
+  @include responsive(s) {
+    @include type-1(h1, mobile);
+  }
+}
+
+h2 {
+  color: $gray-03;
+  @include type-1(h2, desktop);
+  @include responsive(s) {
+    @include type-1(h2, mobile);
+  }
+}
+
+h3 {
+  color: $primary-color;
+  @include type-1(h3, desktop);
+  @include responsive(s) {
+    @include type-1(h2, mobile);
+  }
+}

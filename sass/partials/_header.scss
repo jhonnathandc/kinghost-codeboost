@@ -1,0 +1,43 @@
+.header-bg {
+  background-color: $primary-color;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 2px 20px -10px;
+  
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    padding-top: 46px;
+    padding-bottom: 49px;
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+
+      @include responsive(m) {
+        display: none;
+      }
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          color: $white;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: $secundary-color;
+          }
+          @include type-2(p3, desktop);
+        }
+      }
+    }
+  }
+}

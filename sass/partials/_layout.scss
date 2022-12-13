@@ -1,0 +1,52 @@
+$container-xl: 1216px;
+$container-l: 960px;
+$container-m: 720px;
+$container-s: 576px;
+
+@mixin responsive($device) {
+  @if $device == xl {
+    @media screen and (max-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == l {
+    @media screen and (max-width: $container-l) {
+      @content;
+    }
+  } @else if $device == m {
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == s {
+    @media screen and (max-width: $container-s) {
+      @content;
+    }
+  }
+}
+
+@mixin button {
+  color: $primary-color;
+  font-family: $font-t;
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 700;
+
+  background-color: $secundary-color;
+  width: 100%;
+  max-width: 240px;
+  padding: 16px;
+  border-radius: 6px;
+  text-align: center;
+  transition: .3s ease;
+
+  &:hover {
+    color: $secundary-color;
+    background-color: #503387;
+  }
+}
+
+.container {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

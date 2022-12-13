@@ -1,0 +1,90 @@
+.hero-bg {
+  background-color: $primary-color;
+}
+
+.hero {
+  padding-top: 119px;
+  display: flex;
+  @include responsive(l) {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 159px;
+  }
+
+  .hero-content {
+    max-width: 488px;
+    padding-top: 39px;
+    padding-bottom: 82px;
+
+    @include responsive(l) {
+      max-width: 100%;
+      margin: 0 auto;
+      padding-bottom: 55px;
+      padding-top: 0px;
+    }
+
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: $white;
+      margin-bottom: 32px;
+      @include type-2(p3, desktop);
+    }
+
+    .btn {
+      margin-bottom: 86px;
+      @include button;
+      @include responsive(l) {
+        margin: 0 auto;
+      }
+    }
+
+    .hero-resources {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      color: $white;
+      transition: 0.3s ease;
+      &:hover {
+        color: $secundary-color;
+      }
+      @include type-2(p1, desktop);
+      @include responsive(l) {
+        margin-top: 41px;
+        justify-content: center;
+      }
+
+      span {
+        background-color: #6b48ab;
+        padding: 9px;
+        border-radius: 6px;
+
+        img {
+          animation: arrow 0.5s ease infinite alternate;
+        }
+      }
+    }
+  }
+
+  .hero-image {
+    position: relative;
+    top: 76px;
+    flex: 1;
+    @include responsive(l) {
+      top: 25px;
+    }
+  }
+}
+
+@keyframes arrow {
+  from {
+    transform: translateY(-5px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
